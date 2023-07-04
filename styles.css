@@ -11,7 +11,7 @@
 body {
     margin: 0;
     padding: 0; 
-    overflow-x:hidden; 
+    width:100%; overflow-x: hidden;
         
 }
 .side-menue {
@@ -51,10 +51,11 @@ body {
  } 
 
  .circle-pattern-1  {
+    --_imgWidth:clamp(100px,50%,500px) ;
     position: absolute;
     left: 5%;
     bottom: 10%;
-    width: clamp(100px,50%,500px) ;
+    width: var(--_imgWidth);
     animation:spin 100s linear infinite;
  }
 
@@ -284,6 +285,7 @@ body {
 }
 
 
+/***********************************************************/
 @media (max-width:600px)
 {
 
@@ -356,6 +358,24 @@ body {
         100% { color: #207567}
         
     }
+
+    .circle-pattern-1  {
+        --_imgWidth:clamp(100px,50%,500px) ;
+       
+        left:calc(var(--_imgWidth)/-5);
+        bottom:0;
+        width: var(--_imgWidth);
+     }
+    
+    
+     .circle-pattern-2  {
+        --_imgHeight:110px;
+    
+        position: absolute;
+        bottom: 0;
+        height: var(--_imgHeight);
+        right: calc(var(--_imgHeight)/-3);
+     }
 }
 
 
